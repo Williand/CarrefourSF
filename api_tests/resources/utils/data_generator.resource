@@ -2,7 +2,7 @@
 Library     RequestsLibrary
 Library     String
 Library     Collections
-Resource    create_session_keyword.resource
+Resource    ../session/create_session.resource
 
 *** Keywords ***
 Dado que eu criei um novo usuário

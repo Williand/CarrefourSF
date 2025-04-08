@@ -1,7 +1,6 @@
 *** Settings ***
-Resource    ../resources/create_user_keyword.resource
-Resource    ../resources/api_testing_get_user_id.resource
-Resource    ../resources/auth_JWT_keyword.resource
+Resource    ../resources/utils/data_generator.resource
+Resource    ../resources/users/get_user_id.resource
 
 *** Variables ***
 

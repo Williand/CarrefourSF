@@ -1,7 +1,6 @@
 *** Settings ***
-Resource    ../resources/create_user_keyword.resource
-Resource    ../resources/api_testing_create_user.resource
-*** Variables ***
+Resource    ../resources/utils/data_generator.resource
+Resource    ../resources/users/create_user.resource
 
 *** Test Cases ***
 Cenário 01: Cadastrar um novo usuário com sucesso na ServerRest

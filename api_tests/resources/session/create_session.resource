@@ -2,7 +2,8 @@
 Library     RequestsLibrary
 Library     String
 Library     Collections
-Resource    auth_JWT_keyword.resource
+Resource    ../auth/auth_JWT.resource
+Resource    ../users/create_user.resource
 
 *** Keywords ***
 Criar Sessão na ServeRest

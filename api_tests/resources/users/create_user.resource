@@ -2,8 +2,7 @@
 Library     RequestsLibrary
 Library     String
 Library     Collections
-Resource    create_session_keyword.resource
-Resource    create_user_keyword.resource
+Resource    ../utils/data_generator.resource
 
 *** Keywords ***
 Então o usuário deve ser cadastrado corretamente

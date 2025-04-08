@@ -2,11 +2,12 @@
 Library     RequestsLibrary
 Library     String
 Library     Collections
-Resource    create_user_keyword.resource
+Resource    ../utils/data_generator.resource
+Resource    ../auth/auth_JWT.resource
 
 *** Keywords ***
 Então posso consultar os dados do novo usuário
-    ${resposta_consulta}    GET On Session    alias=ServeRest    url=/usuarios/${ID_USUARIO}    expected_status=200
+    ${resposta_consulta}    GET On Session    alias=ServeRestAuth    url=/usuarios/${ID_USUARIO}    expected_status=200
     Set Test Variable    ${RESP_CONSULTA}    ${resposta_consulta.json()}
 
 E Conferir os dados retornados

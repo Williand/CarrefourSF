@@ -2,8 +2,8 @@
 Library     RequestsLibrary
 Library     String
 Library     Collections
-Resource    create_session_keyword.resource
-Resource    create_user_keyword.resource
+Resource    ../session/create_session.resource
+Resource    ../users/create_user.resource
 
 *** Keywords ***
 Login com Sucesso
