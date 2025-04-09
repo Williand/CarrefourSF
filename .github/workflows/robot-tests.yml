@@ -24,4 +24,4 @@ jobs:
 
     - name: Executar Testes com Robot Framework
       run: |
-        robot -d ./results
+        robot -d ./results api_tests/tests/
