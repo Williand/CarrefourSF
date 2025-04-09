@@ -47,5 +47,5 @@ jobs:
       with:
         report_path: results
         gh_access_token: ${{ secrets.GITHUB_TOKEN }}
-        show_passed_tests: false
+        show_passed_tests: true
 
