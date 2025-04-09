@@ -46,6 +46,5 @@ jobs:
       uses: joonvena/robotframework-reporter-action@v2.5
       with:
         report_path: results
-        gh_access_token: ${{ secrets.GITHUB_TOKEN }}
+        gh_access_token: ${{ secrets.PERSONAL_GH_TOKEN }}
         show_passed_tests: true
-
