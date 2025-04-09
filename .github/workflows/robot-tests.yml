@@ -26,13 +26,13 @@ jobs:
       run: |
         robot -d ./results api_tests/tests/
 
-    - name: Upload Tests Results
+    - name: Upload dos Resultados
       if: always()
       uses: actions/upload-artifact@v3
       with:
         name: results
         path: ./results
-        if-no-files-found: ignore
+        if-no-files-found: warn
         retention-days: 2
 
     - name: Download Tests Results
