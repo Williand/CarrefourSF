@@ -1,6 +1,6 @@
 *** Settings ***
-Resource    ../resources/create_user_keyword.resource
-Resource    ../resources/api_testing_create_user.resource
+Resource    ../resources/utils/data_generator.resource
+Resource    ../resources/users/get_users.resource
 
 *** Test Cases ***
 Cenário 01: Consultar os dados de um novo usuário
@@ -9,6 +9,7 @@ Cenário 01: Consultar os dados de um novo usuário
     Então posso consultar os dados do novo usuário
     E Conferir os dados retornados
 Cenário 02: Tentar buscar um usuário com ID inexistente
-    Quando eu envio uma requisição GETcom um ID inválido
-    Então a resposta deve conter status 400 ou 404
-    E deve retornar uma mensagem de erro informando que o usuário não existe
+    Dado que eu criei um novo usuário
+    Quando eu cadastrar o usuário na ServerRest    email=${EMAIL_TESTE}    status_code_desejado=201
+    E eu enviar uma requisição GET com um ID inválido
+    Então a resposta deve conter uma lista vazia

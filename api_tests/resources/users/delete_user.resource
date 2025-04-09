@@ -23,9 +23,7 @@ E o usuário deve ser removido da base de dados
     Dictionary Should Contain Item    ${resposta_consulta.json()}    message    Usuário não encontrado
     Log    ${resposta_consulta}
 
-Quando que eu envio uma requisição DELETE com um ID inválido
-    Dado que eu criei um novo usuário
-    Quando eu cadastrar o usuário na ServerRest    email=${EMAIL_TESTE}    status_code_desejado=201
+E eu enviar uma requisição DELETE com um ID inválido
     Criar Sessão com auth
     ${resposta_consulta_negativa}    DELETE On Session    
     ...    alias=ServeRestAuth   
