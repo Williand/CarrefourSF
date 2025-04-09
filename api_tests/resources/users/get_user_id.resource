@@ -7,7 +7,10 @@ Resource    ../auth/auth_JWT.resource
 
 *** Keywords ***
 Então posso consultar os dados do novo usuário
-    ${resposta_consulta}    GET On Session    alias=ServeRestAuth    url=/usuarios/${ID_USUARIO}    expected_status=200
+    ${resposta_consulta}    GET On Session    
+    ...    alias=ServeRestAuth    
+    ...    url=/usuarios/${ID_USUARIO}    
+    ...    expected_status=200
     Set Test Variable    ${RESP_CONSULTA}    ${resposta_consulta.json()}
 
 E Conferir os dados retornados
@@ -19,7 +22,10 @@ E Conferir os dados retornados
     Dictionary Should Contain Item    ${RESP_CONSULTA}    _id              ${ID_USUARIO}
 Quando eu envio uma requisição GET com um ID inválido
     Criar Sessão com auth
-    ${resposta_consulta_negativa}    GET On Session    alias=ServeRestAuth   url=/usuarios/0uxuPY0cbmQhpEzo   expected_status=400
+    ${resposta_consulta_negativa}    GET On Session    
+    ...    alias=ServeRestAuth   
+    ...    url=/usuarios/0uxuPY0cbmQhpEzo   
+    ...    expected_status=400
     Set Test Variable    ${RESP_CONSULTA_NEGATIVA}    ${resposta_consulta_negativa.json()}
     Log    ${RESP_CONSULTA_NEGATIVA}
 Então deve retornar uma mensagem de erro informando que o usuário não existe
