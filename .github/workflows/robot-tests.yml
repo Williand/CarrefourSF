@@ -28,7 +28,7 @@ jobs:
 
     - name: Upload dos Resultados
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: results
         path: ./results
@@ -37,7 +37,7 @@ jobs:
 
     - name: Download Tests Results
       if: always()
-      uses: actions/download-artifact@v1
+      uses: actions/download-artifact@v4
       with:
         name: results
 
