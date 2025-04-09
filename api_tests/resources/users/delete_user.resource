@@ -24,10 +24,12 @@ E o usuário deve ser removido da base de dados
     Log    ${resposta_consulta}
 
 Quando que eu envio uma requisição DELETE com um ID inválido
+    Dado que eu criei um novo usuário
+    Quando eu cadastrar o usuário na ServerRest    email=${EMAIL_TESTE}    status_code_desejado=201
     Criar Sessão com auth
     ${resposta_consulta_negativa}    DELETE On Session    
     ...    alias=ServeRestAuth   
-    ...    url=/usuarios/0uxuPY0cbmQhpEzo   
+    ...    url=/usuarios/0uxuPY0cbmQhpEzo
     ...    expected_status=200
     Set Test Variable    ${RESP_CONSULTA_NEGATIVA}    ${resposta_consulta_negativa.json()}
     Log    ${RESP_CONSULTA_NEGATIVA}

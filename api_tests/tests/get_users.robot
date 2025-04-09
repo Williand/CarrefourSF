@@ -2,8 +2,6 @@
 Resource    ../resources/create_user_keyword.resource
 Resource    ../resources/api_testing_create_user.resource
 
-*** Variables ***
-
 *** Test Cases ***
 Cenário 01: Consultar os dados de um novo usuário
     Dado que eu criei um novo usuário

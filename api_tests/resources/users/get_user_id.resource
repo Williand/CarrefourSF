@@ -7,6 +7,7 @@ Resource    ../auth/auth_JWT.resource
 
 *** Keywords ***
 Então posso consultar os dados do novo usuário
+    Criar Sessão com auth
     ${resposta_consulta}    GET On Session    
     ...    alias=ServeRestAuth    
     ...    url=/usuarios/${ID_USUARIO}    
